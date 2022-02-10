@@ -73,10 +73,20 @@
 						text-align: center;
 						border: 1px solid grey;
 				}
-
+				.container {
+						position: relative;
+						z-index: 1;
+						height: 40vh;
+						width: 40vh;
+						margin: 20px;
+						padding: 20px;
+						border: 1px solid grey;
+						background: radial-gradient(circle at center, #222, #000);
+				}
 				.container:hover {
 						border: 1px solid #368F8B;
 				}
+				/*below is the css for the spinning sphere*/
 				.circle {
 						position: absolute;
 						z-index: -1;
@@ -181,9 +191,9 @@
 						bottom: 0;
 						left: 0;
 						background-color: black;
+						background: radial-gradient(circle at center, #222, #000);
 						z-index: 3;
 				}
-
 				@keyframes go-away {
 					100% {
 						opacity: 0;
@@ -196,6 +206,7 @@
 						color: #368F8B;
 				}
 				}
+				/*used to make the expanding circle which then becomes the spinning sphere*/
 				@keyframes circle-anim {
 				0% {
 						height: 0vh;
@@ -208,6 +219,7 @@
 						background-color: #EEEEEE10;
 				}
 				}
+				/*spins all the spinner divs. looks like a spinning sphere*/
 				@keyframes circle-spin {
 						0%{
 								height: 40vh;
@@ -240,6 +252,7 @@
 								background-color: #EEEEEE00;
 						}
 				}
+				/*css for beating heart animation below.*/
 					.heart-container {
 						position: relative;
 						z-index: 1;
@@ -306,7 +319,6 @@
 						top: -25px;
 						left: 0px;
 					}
-
 					@keyframes backdiv {
 						0% {
 							background: #0F2625;
@@ -318,7 +330,6 @@
 							background: #0F2625;
 						}
 					}
-
 					@keyframes beat {
 						0% {
 							transform: scale(1) rotate(-45deg);
@@ -327,7 +338,26 @@
 							transform: scale(0.6) rotate(-45deg);
 						}
 					}
+					/*css below for wall of spinning cubes*/
+					.cubes-container {
+							display: flex;
+							justify-content: center;
+							align-items: center;
+					}
+					.flex {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+					}
+					.cube {
 
+					}
+					.face {
+						position: absolute;
+						width: 40px;
+						height: 40px;
+						border: 1px solid #368F8B;
+					}
 				@media (prefers-reduced-motion: reduce) {
 						* {
 								animation-duration: 0.01ms !important;
@@ -338,7 +368,6 @@
 				}
   </style>
   <body>
-
     <header>
 			<navbar id="navbar">
 				<a class="navtab" href="index.html">Home</a>
@@ -379,6 +408,26 @@
 							<div class="back"></div>
 							<div class="heart"></div>
 							<div class="box"></div>
+					</div>
+				</div>
+			</div>
+			<div class="section">
+				<h2>Wall of Spinning Cubes</h2>
+				<div class="text-n-anim-container">
+					<p class="section-text">
+						Cool and sleek-looking cube animation based off this <a href="https://codepen.io/hisamikurita/pen/LYEWXEW" target="_blank">codepen.</a>
+						<br><br>
+						Hover over the square on the right to play the animation. -->
+					</p>
+					<div class="cubes-container container">
+							<div class="cube">
+								<div class="front face"></div>
+								<div class="back face"></div>
+								<div class="top face"></div>
+								<div class="bottom face"></div>
+								<div class="right face"></div>
+								<div class="left face"></div>
+							</div>
 					</div>
 				</div>
 			</div>
