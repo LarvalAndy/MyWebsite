@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style>
+				body {
+						background-color: black;
+						font-family: inconsolata;
+						color: white;
+				}
+				main {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					min-height: 100vh;
+					align-items: center;
+				}
+				h1 {
+					margin: 50px;
+					font-weight: 70;
+				}
+				#navbar {
+						position: fixed;
+						padding: 20px;
+				}
+				p {
+						font-size: 20px;
+						font-weight: 50;
+				}
+				.navtab {
+						margin: 10px;
+				}
+				h2 {
+						color: white;
+						font-size: 20px;
+						font-weight: 50;
+						margin: 20px;
+				}
+				a {
+						text-decoration: none;
+						color: white;
+				}
+				a:hover {
+						animation-name: hover;
+						animation-duration: 1s;
+						animation-fill-mode: forwards;
+				}
+				.section-text {
+					width: 40vw;
+					margin: 20px;
+				}
+				.section {
+					margin-top: 30px;
+					display: flex;
+					flex-direction: column;
+					align-items: flex-start;
+				}
+				.text-n-anim-container {
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+				}
+				.spinner-container {
+						position: relative;
+						z-index: 1;
+						height: 40vh;
+						width: 40vh;
+						margin: 20px;
+						padding: 20px;
+						text-align: center;
+						border: 1px solid grey;
+				}
+
+				.container:hover {
+						border: 1px solid #368F8B;
+				}
+				.circle {
+						position: absolute;
+						z-index: -1;
+						border-radius: 50%;
+						height: 40vh;
+						width: 40vh;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+				}
+				.spinner{
+						position: absolute;
+						z-index: -1;
+						border-radius: 50%;
+						height: 40vh;
+						width: 40vh;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+				}
+				.spinner2{
+						position: absolute;
+						z-index: -1;
+						border-radius: 50%;
+						height: 40vh;
+						width: 40vh;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+				}
+				.spinner3{
+						position: absolute;
+						z-index: -1;
+						border-radius: 50%;
+						height: 40vh;
+						width: 40vh;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+				}
+				.spinner4{
+						position: absolute;
+						z-index: -1;
+						border-radius: 50%;
+						height: 40vh;
+						width: 40vh;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+				}
+				.spinner-container:hover .circle{
+						animation-name: circle-anim;
+						animation-duration: 1.5s;
+						animation-timing-function: ease;
+						animation-fill-mode: forwards;
+				}
+				.container:hover p{
+						animation-name: go-away;
+						animation-duration: 1s;
+						animation-timing-function: ease;
+						animation-fill-mode: forwards;
+				}
+				.spinner-container:hover .spinner{
+						animation-name: circle-spin;
+						animation-duration: 2s;
+						animation-delay: 1.5s;
+						animation-timing-function: linear;
+						animation-iteration-count: infinite;
+				}
+				.spinner-container:hover .spinner2{
+						animation-name: circle-spin;
+						animation-duration: 2s;
+						animation-delay: 2s;
+						animation-timing-function: linear;
+						animation-iteration-count: infinite;
+				}
+				.spinner-container:hover .spinner3{
+						animation-name: circle-spin;
+						animation-duration: 2s;
+						animation-delay: 2.5s;
+						animation-timing-function: linear;
+						animation-iteration-count: infinite;
+				}
+				.spinner-container:hover .spinner4{
+						animation-name: circle-spin;
+						animation-duration: 2s;
+						animation-delay: 3s;
+						animation-timing-function: linear;
+						animation-iteration-count: infinite;
+				}
+				div.spinner-container > a {
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%,-50%);
+				}
+				.box {
+						position: absolute;
+						margin: auto;
+						top: 0;
+						right: 0;
+						bottom: 0;
+						left: 0;
+						background-color: black;
+						z-index: 3;
+				}
+
+				@keyframes go-away {
+					100% {
+						opacity: 0;
+						transform: translate(0, -20px)
+					}
+				}
+				@keyframes hover {
+				100% {
+						text-decoration: underline;
+						color: #368F8B;
+				}
+				}
+				@keyframes circle-anim {
+				0% {
+						height: 0vh;
+						width: 0vh;
+				}
+				100% {
+						height: 40vh;
+						width: 40vh;
+						border: 1px solid grey;
+						background-color: #EEEEEE10;
+				}
+				}
+				@keyframes circle-spin {
+						0%{
+								height: 40vh;
+								border: 1px solid grey;
+								width: 40vh;
+								background-color: #EEEEEE00;
+						}
+						25%{
+								height: 40vh;
+								border: 1px solid grey;
+								width: 20vh;
+								background-color: #EEEEEE05;
+						}
+						50% {
+								height: 40vh;
+								border: 1px solid grey;
+								width: 1px;
+								background-color: #EEEEEE10;
+						}
+						75% {
+								height: 40vh;
+								border: 1px solid grey;
+								width: 20vh;
+								background-color: #EEEEEE05;
+						}
+						100% {
+								height: 40vh;
+								border: 1px solid grey;
+								width: 40vh;
+								background-color: #EEEEEE00;
+						}
+				}
+					.heart-container {
+						position: relative;
+						z-index: 1;
+						height: 40vh;
+						width: 40vh;
+						margin: 20px;
+						padding: 20px;
+						border: 1px solid grey;
+				}
+				.heart-container:hover .back{
+						animation-name: backdiv;
+						animation-duration: 1s;
+						animation-iteration-count: infinite;
+						animation-timing-function: linear;
+				}
+				.heart-container:hover .heart {
+						animation-name: beat;
+						animation-duration: 1s;
+						animation-iteration-count: infinite;
+				}
+				.heart-container:hover .box {
+						animation-name: go-away;
+						animation-duration: 0.5s;
+						animation-fill-mode: forwards;
+				}
+				  .back {
+						padding: 0;
+						margin: 0;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+					}
+
+					.heart {
+						position: absolute;
+						margin: auto;
+						top: 0;
+						right: 0;
+						bottom: 0;
+						left: 0;
+						background-color: #368F8B;
+						height: 50px;
+						width: 50px;
+						transform: rotate(-45deg);
+					}
+					.heart:after {
+						background-color: #368F8B;
+						content: "";
+						border-radius: 50%;
+						position: absolute;
+						width: 50px;
+						height: 50px;
+						top: 0px;
+						left: 25px;
+					}
+					.heart:before {
+						background-color: #368F8B;
+						content: "";
+						border-radius: 50%;
+						position: absolute;
+						width: 50px;
+						height: 50px;
+						top: -25px;
+						left: 0px;
+					}
+
+					@keyframes backdiv {
+						0% {
+							background: #0F2625;
+						}
+						50% {
+							background: black;
+						}
+						100% {
+							background: #0F2625;
+						}
+					}
+
+					@keyframes beat {
+						0% {
+							transform: scale(1) rotate(-45deg);
+						}
+						50% {
+							transform: scale(0.6) rotate(-45deg);
+						}
+					}
+
+				@media (prefers-reduced-motion: reduce) {
+						* {
+								animation-duration: 0.01ms !important;
+								animation-iteration-count: 1 !important;
+								transition-duration: 0.01ms !important;
+								scroll-behavior: auto !important;
+						}
+				}
+  </style>
+  <body>
+
+    <header>
+			<navbar id="navbar">
+				<a class="navtab" href="index.html">Home</a>
+				<a class="navtab" href="https://github.com/LarvalAndy" target="_blank" id="profile-link">GitHub</a>
+			</navbar>
+			<div style="height: 200px"></div>
+    </header>
+    <main>
+			<h1>check these 1337 css animations</h1>
+			<div id="spinner-section" class="section">
+				<h2>3D Spinning Circle</h2>
+				<div class="text-n-anim-container">
+					<p class="section-text">
+						As you may have noticed, I've used this animation on my landing page.
+						It is actually very simple, and can be customizable according to one's needs.
+						<br><br>
+						Hover over the square on the right to play the animation. -->
+					</p>
+					<div class="spinner-container container">
+							<div class="circle"></div>
+							<div class="spinner"></div>
+							<div class="spinner2"></div>
+							<div class="spinner3"></div>
+							<div class="spinner4"></div>
+							<p>Hover over me!</p>
+					</div>
+				</div>
+			</div>
+			<div class="section">
+				<h2>Beating Heart</h2>
+				<div class="text-n-anim-container">
+					<p class="section-text">
+						I learned how to make this as I took FreeCodeCamp's web design course.
+						<br><br>
+						Hover over the square on the right to play the animation. -->
+					</p>
+					<div class="heart-container container">
+							<div class="back"></div>
+							<div class="heart"></div>
+							<div class="box"></div>
+					</div>
+				</div>
+			</div>
+    </main>
+    <footer>
+    </footer>
+  </body>
+</html>
